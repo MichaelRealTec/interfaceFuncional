@@ -21,7 +21,8 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		// remover desta lista todos que tem o preço maior ou igual a 100
-		list.removeIf(Product::staticProductPredicate);
+		list.removeIf(Product::nonStaticProductPredicate);
+		//list.removeIf(Product::staticProductPredicate);
 		//list.removeIf(new ProductPredicate());
 		// list.removeIf(p -> p.getPrice() >= 100);
 		
