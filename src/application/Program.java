@@ -22,10 +22,10 @@ public class Program {
 		
 		double min = 100.00;
 		
-		Predicate<Product> pred = p -> p.getPrice() >= min;
+		//Predicate<Product> pred = p -> p.getPrice() >= min;
 		//Predicate<Product> pred = p -> p.getPrice() >= 100.0;
 		// remover desta lista todos que tem o preço maior ou igual a 100
-		list.removeIf(pred);
+		list.removeIf( p -> p.getPrice() >= min);
 		//list.removeIf(Product::nonStaticProductPredicate);
 		//list.removeIf(Product::staticProductPredicate);
 		//list.removeIf(new ProductPredicate());
