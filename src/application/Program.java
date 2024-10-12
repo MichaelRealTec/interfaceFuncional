@@ -2,9 +2,9 @@ package application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
 
 import entities.Product;
-import util.ProductPredicate;
 public class Program {
 
 	public static void main(String[] args) {
@@ -20,8 +20,10 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 		
+		Predicate<Product> pred = p -> p.getPrice() >= 100.0;
 		// remover desta lista todos que tem o preço maior ou igual a 100
-		list.removeIf(Product::nonStaticProductPredicate);
+		list.removeIf(pred);
+		//list.removeIf(Product::nonStaticProductPredicate);
 		//list.removeIf(Product::staticProductPredicate);
 		//list.removeIf(new ProductPredicate());
 		// list.removeIf(p -> p.getPrice() >= 100);
